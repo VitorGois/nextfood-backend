@@ -1,16 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { IsInt, IsNotEmpty, IsString } from 'class-validator';
 
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
-@Entity()
 export class User {
 
-  @PrimaryGeneratedColumn('uuid')
+  @IsInt() @IsNotEmpty()
     id: number;
 
-  @Column()
+  @IsString() @IsNotEmpty()
     name: string;
 
-  @Column()
+  @IsString() @IsNotEmpty()
     email: string;
 
   constructor(name: string, email: string) {
