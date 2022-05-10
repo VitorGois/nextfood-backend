@@ -9,9 +9,6 @@ export class RestaurantCreateDto {
   @IsString() @IsNotEmpty()
   public description: string;
 
-  @IsString() @IsNotEmpty() @IsOptional()
-  public categories?: string;
-
 }
 
 export class RestaurantUpdateDto {
@@ -36,14 +33,14 @@ export class RestaurantUpdateDto {
 
 export class RestaurantReadByIdDto {
 
-  @IsNumberString()
+  @IsString()
   public id: string;
 
 }
 
 export class RestaurantDeleteByIdDto {
 
-  @IsNumberString()
+  @IsString()
   public id: string;
 
 }
